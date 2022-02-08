@@ -47,3 +47,23 @@ body {
     height: 20px;
     padding-left: 20px;
 }
+
+.block_small {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-check {
+    background-color: #dfeaff;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: #dfeaff;
+    padding: 20px;
+    margin-top: 22px;
+}

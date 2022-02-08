@@ -168,4 +168,10 @@ class Address
 
         return $this;
     }
+
+    //Pour éviter l'erreur d'affichage object to string et permettre d'accéder aux propriétés
+    public function __toString(){
+        return $this->getName().'[br]'.$this->getAddress().'[br]'.$this->getCity().' - '.$this->getCountry();
+    }
+
 }
