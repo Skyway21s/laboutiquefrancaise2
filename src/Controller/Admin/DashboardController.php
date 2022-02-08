@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Carrier;
 use App\Entity\Category;
+use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -23,7 +24,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         // on génère un url à l'aide notre adminurlgenerator pour afficher la liste de nos users
-       $url = $this->adminUrlGenerator->setController(UserCrudController::class)->generateUrl();
+       $url = $this->adminUrlGenerator->setController(OrderCrudController::class)->generateUrl();
        // on affiche la vue
         return $this->redirect($url);
     }
@@ -38,7 +39,8 @@ class DashboardController extends AbstractDashboardController
     {
         // creation des items du menu
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Orders', 'fas fa-shopping-cart', Order::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Products', 'fas fa-tags', Product::class);
         yield MenuItem::linkToCrud('Carriers', 'fas fa-truck', Carrier::class);
